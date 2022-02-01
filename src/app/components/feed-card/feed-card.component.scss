@@ -1,0 +1,22 @@
+.insta-card{
+    ion-avatar{
+        img{
+            border: 2px solid;
+        }
+    }
+    .post-image{
+        height: 250px;
+        line-height: 250px;
+        text-align: center;
+        // border: 1px solid red;
+        img{
+            max-width:100%;
+            max-height:100%;
+            vertical-align: middle;
+            object-fit:cover;
+        }
+    }
+    .likes{
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="chatbubble-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Instagram</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="stories ion-margin"> 
+    <swiper #stories [config]="slideOpts" (swiper)="setSwiperInstance($event)" (slideChange)="slideDidChange()">
+      <ng-template class="swiper-slide" swiperSlide *ngFor="let s of feed;">
+        <div class="story">
+          <ion-avatar>
+            <img class="story-img" src="https://picsum.photos/200">
+          </ion-avatar>
+          <span>{{ s.name.first }}</span>
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <app-feed-card *ngFor="let post of feed; let i = index" [post]="post"></app-feed-card>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
