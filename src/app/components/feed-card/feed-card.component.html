@@ -1,6 +1,6 @@
 <!-- *ngFor="let post of feed; let i = index" -->
 <ion-card class="insta-card ion-no-margin ion-margin-vertical">
-  <ion-item class="user-info" button lines="none" routerLink="/profile" routerDirection="forward">
+  <ion-item class="user-info" button lines="none" (click)="navigate('profile')">
     <ion-avatar slot="start">
       <img [src]="post.picture.thumbnail">
     </ion-avatar>
@@ -36,7 +36,7 @@
     <p class="post-caption"><strong>{{ post.name.first }} {{ post.name.last }}</strong> is content, without any paragraph or header tags,
       within an ion-card-content element.</p>
   </ion-card-content>
-  <ion-item class="user-info" button lines="none" routerLink="/profile" routerDirection="forward">
+  <ion-item class="user-info" button lines="none" (click)="navigate('profile')">
     <ion-avatar slot="start">
       <img [src]="post.picture.thumbnail">
     </ion-avatar>

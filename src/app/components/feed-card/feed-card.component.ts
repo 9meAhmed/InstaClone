@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed-card',
@@ -9,12 +10,18 @@ export class FeedCardComponent implements OnInit {
 
   @Input() post: any;
 
-  constructor() { }
+  constructor(    
+    private router: Router,
+  ) { }
 
   ngOnInit() {}
 
   randomImage(v?){
     return 'https://picsum.photos/400/250?random=' + this.post.id.value;
+  }
+
+  navigate(page){
+    this.router.navigate([page]);
   }
 
 }
