@@ -1,6 +1,6 @@
 <!-- *ngFor="let post of feed; let i = index" -->
 <ion-card class="insta-card ion-no-margin ion-margin-vertical">
-  <ion-item class="user-info" button lines="none">
+  <ion-item class="user-info" button lines="none" routerLink="/profile" routerDirection="forward">
     <ion-avatar slot="start">
       <img [src]="post.picture.thumbnail">
     </ion-avatar>
@@ -11,7 +11,7 @@
     <ion-icon name="ellipsis-vertical-outline" slot="end"></ion-icon>
   </ion-item>
   <div class="post-image ion-align-items-center">
-    <img src="https://picsum.photos/400/250"/>
+    <img [src]="randomImage()"/>
   </div>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -36,7 +36,7 @@
     <p class="post-caption"><strong>{{ post.name.first }} {{ post.name.last }}</strong> is content, without any paragraph or header tags,
       within an ion-card-content element.</p>
   </ion-card-content>
-  <ion-item class="user-info" button lines="none">
+  <ion-item class="user-info" button lines="none" routerLink="/profile" routerDirection="forward">
     <ion-avatar slot="start">
       <img [src]="post.picture.thumbnail">
     </ion-avatar>

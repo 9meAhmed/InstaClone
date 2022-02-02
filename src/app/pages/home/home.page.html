@@ -14,9 +14,9 @@
   <div class="stories ion-margin"> 
     <swiper #stories [config]="slideOpts" (swiper)="setSwiperInstance($event)" (slideChange)="slideDidChange()">
       <ng-template class="swiper-slide" swiperSlide *ngFor="let s of feed;">
-        <div class="story">
+        <div class="story" routerLink="/profile" routerDirection="forward">
           <ion-avatar>
-            <img class="story-img" src="https://picsum.photos/200">
+            <img class="story-img" [src]="randomImage(s)">
           </ion-avatar>
           <span>{{ s.name.first }}</span>
         </div>

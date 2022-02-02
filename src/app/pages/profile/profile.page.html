@@ -1,9 +1,81 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="ellipsis-horizontal-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Instagram</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-grid class="profile-header ion-margin">
+    <ion-row>
+      <ion-col size="3" class="ion-text-center">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <h3>444</h3>
+        <p>Posts</p>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <h3>454</h3>
+        <p>Followers</p>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <h3>744</h3>
+        <p>Following</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p><strong>ON Lahore</strong></p>
+        <p>Information Technology</p>
+        
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5">
+        <ion-button expand="block" fill="outline">Folloing</ion-button>
+      </ion-col>
+      <ion-col size="5">
+        <ion-button expand="block" fill="outline">Message</ion-button>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button expand="block" fill="outline">  
+          <ion-icon name="person-add-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-segment scrollable value="grid-outline">
+    <ion-segment-button value="grid-outline">
+      <ion-icon name="grid-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="play-outline">
+      <ion-icon name="play-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="person-add-outline">
+      <ion-icon name="person-add-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid>
+    <ion-row class="ion-no-padding ion-no-margin">
+      <ion-col size="4" class="ion-no-padding ion-no-margin" *ngFor="let img of gallary;">
+        <img class="story-img" [src]="img">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

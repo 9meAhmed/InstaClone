@@ -13,4 +13,8 @@ export class FeedCardComponent implements OnInit {
 
   ngOnInit() {}
 
+  randomImage(v?){
+    return 'https://picsum.photos/400/250?random=' + this.post.id.value;
+  }
+
 }

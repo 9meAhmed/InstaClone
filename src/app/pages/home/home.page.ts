@@ -84,4 +84,9 @@ export class HomePage implements OnInit {
     //   console.log(index);
     // }
   }
+
+  randomImage(v?){
+    let temp = Math.random();
+    return 'https://picsum.photos/200?random=' + v.id.value;
+  }
 }
